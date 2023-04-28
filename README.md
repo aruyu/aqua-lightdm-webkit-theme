@@ -21,7 +21,13 @@
 aqua-lightdm-webkit-theme can be obtained by either downloading a `.zip` file of the contents of the repository, or by cloning the repository via `git`. In either case, the theme may be applied by modifying `/etc/lightdm/lightdm-webkit-greeter.conf` or `/etc/lightdm/lightdm-webkit2-greeter.conf` as such:
 
 ```sh
+[greeter]
 webkit-theme = aqua
+```
+
+```sh
+[branding]
+background_images = /home
 ```
 
 ### From zip
@@ -37,12 +43,13 @@ unzip -o aqua-lightdm-webkit-theme.zip -d /usr/share/lightdm-webkit/themes/aqua
 Clone this repository into the `lightdm-webkit-greeter` theme directory.
 
 ```sh
-git clone https://github.com/paysonwallach/aqua-lightdm-webkit-theme /usr/share/lightdm-webkit/themes/aqua
+git clone https://github.com/aruyu/aqua-lightdm-webkit-theme /usr/share/lightdm-webkit/themes/aqua
 ```
 
 ## Customization
 
-By default, the theme looks for its background image at `/usr/share/backgrounds/current`, which can simply be a symlink to the user's current background. Note that this image must be readable by the `lightdm` user. The background image can otherwise be set by modifying the `background` property in `resources/img/style.css`.
+By default, the theme looks for its background image at `/usr/share/screenrc/background`, which can simply be a symlink to the user's current background. Note that this image must be readable by the `lightdm` user. If you want to make a symlink over `/home` directory, change `background_images =` in `/etc/lightdm/lightdm-webkit-greeter.conf` or `/etc/lightdm/lightdm-webkit2-greeter.conf`.
+The background image can otherwise be set by modifying the `background` property in `resources/img/style.css`.
 
 ## Contributing
 
